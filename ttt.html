@@ -1,8 +1,74 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<script>
-
-		</script>
+		<title>Tic Tac Toe Game</title>
 	</head>
+	<body>
+		<script>
+			function computerPlay() {
+				let move = Math.floor(Math.random() * 3)
+				if (move == 0) {
+					return "Rock"
+				} else if (move == 1) {
+					return "Paper"
+				} else if (move == 2) {
+					return "Scissors"
+				}
+			}
+			function playRound(playerSelection,computerSelection) {
+				let player = playerSelection.toUpperCase()
+				let computer = computerSelection.toUpperCase()
+				if (player == "ROCK") {
+					if (computer == "ROCK") {
+						return "Draw!"	
+					} else if (computer == "PAPER") {
+						return "You Lose! Paper beats Rock."
+					} else if (computer == "SCISSORS") {
+						return "You Win! Rock beats Scissors"
+					}
+				} else if (player == "PAPER") {
+					if (computer == "ROCK") {
+						return "You Win! Paper beats Rock."
+					} else if (computer == "PAPER") {
+						return "Draw!"
+					} else if (computer == "SCISSORS") {
+						return "You Lose! Scissors beats Paper."
+					}
+				} else if (player == "SCISSORS") {
+					if (computer == "ROCK") {
+						return "You Lose! Rock beats Scissors"
+					} else if (computer == "PAPER") {
+						return "You Win! Scissors beats Paper."
+					} else if (computer == "SCISSORS") {
+						return "Draw!"
+					}
+				}
+			}
+			function game() {
+				let playerScore = 0
+				let computerScore = 0
+				let draws = 0
+				for (round = 0; round < 5; round++) {
+					let playerSelection = prompt("What will you play?")
+					let computerSelection = computerPlay()
+					let game = playRound(playerSelection,computerSelection)
+					if (game == "Draw!") {
+						draws += 1
+					} else if (game.indexOf("Win") != -1) {
+						playerScore += 1
+					} else if (game.indexOf("Lose") != -1) {
+						computerScore += 1
+					}
+					window.alert(game)
+				}
+				if (playerScore > computerScore) {
+					window.alert("You Win! \nYour Score: " + playerScore + "\nComputer's Score: " + computerScore)
+				} else if (playerScore < computerScore) {
+					window.alert("You Lose! \nYour Score: " + playerScore + "\nComputer's Score: " + computerScore)
+				} else if (playerScore == computerScore) {
+					window.alert("Draw! \nYour Score: " + playerScore + "\nComputer's Score: " + computerScore)
+				}
+			}
+		</script>
+	</body>
 </html>
