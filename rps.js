@@ -8,7 +8,8 @@ function computerPlay() {
         return "Scissors"
     }
 }
-
+let playerScore = 0
+let computerScore = 0
 function playRock() {
     let playerSelection = "ROCK";
     let computerSelection = computerPlay().toUpperCase();
@@ -41,27 +42,51 @@ function playRound(playerSelection,computerSelection) {
     let computer = computerSelection
     if (player == "ROCK") {
         if (computer == "ROCK") {
-            alert("Draw!")	
+            alert("Draw!" + 
+            "\nPlayer: " + playerScore + 
+            "\nComputer: " + computerScore)	
         } else if (computer == "PAPER") {
-            alert("You Lose! Paper beats Rock.")
+            computerScore += 1
+            alert("You Lose! Paper beats Rock." + 
+            "\nPlayer: " + playerScore + 
+            "\nComputer: " + computerScore)
         } else if (computer == "SCISSORS") {
-            alert("You Win! Rock beats Scissors")
+            playerScore += 1
+            alert("You Win! Rock beats Scissors" + 
+            "\nPlayer: " + playerScore + 
+            "\nComputer: " + computerScore)
         }
     } else if (player == "PAPER") {
         if (computer == "ROCK") {
-            alert("You Win! Paper beats Rock.")
+            playerScore += 1
+            alert("You Win! Paper beats Rock." + 
+            "\nPlayer: " + playerScore + 
+            "\nComputer: " + computerScore)
         } else if (computer == "PAPER") {
-            alert("Draw!")
+            alert("Draw!" + 
+            "\nPlayer: " + playerScore + 
+            "\nComputer: " + computerScore)
         } else if (computer == "SCISSORS") {
-            alert("You Lose! Scissors beats Paper.")
+            computerScore += 1
+            alert("You Lose! Scissors beats Paper." + 
+            "\nPlayer: " + playerScore + 
+            "\nComputer: " + computerScore)
         }
     } else if (player == "SCISSORS") {
         if (computer == "ROCK") {
-            alert("You Lose! Rock beats Scissors")
+            computerScore += 1
+            alert("You Lose! Rock beats Scissors" + 
+            "\nPlayer: " + playerScore + 
+            "\nComputer: " + computerScore)
         } else if (computer == "PAPER") {
-            alert("You Win! Scissors beats Paper.")
+            playerScore += 1
+            alert("You Win! Scissors beats Paper." + 
+            "\nPlayer: " + playerScore + 
+            "\nComputer: " + computerScore)
         } else if (computer == "SCISSORS") {
-            alert("Draw!")
+            alert("Draw!" + 
+            "\nPlayer: " + playerScore + 
+            "\nComputer: " + computerScore)
         }
     }
 }

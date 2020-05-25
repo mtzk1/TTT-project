@@ -11,13 +11,14 @@
     grid-area: buttons;
     display: grid;
     grid-column-gap: 50px;
+    grid-row-gap: 25px;
     justify-items: center;
     grid-template-areas:
     "rockimg paperimg scissorsimg"
     "rock paper scissors";
 }
 body {
-    background-color: white;
+    background-color: black;
 }
 button {
     font-size: 50px;
