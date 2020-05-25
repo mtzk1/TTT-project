@@ -1,2 +1,2 @@
-# TTT-project
-TicTacToe Project - The Odin Project
+# rps-project
+Rock Paper Scissors Project - The Odin Project
